@@ -1,33 +1,34 @@
-fun main(){
-    //1
-    fun printFullName(firstName : String, lastName : String){
-    println(firstName +" "+lastName)
-}
-    printFullName("Бислан","Хуаде")
+fun main() {
+
+    fun printFullName(firstName: String, lastName: String) {
+        println(firstName + " " + lastName)
+    }
+    printFullName("Бислан", "Хуаде")
 
     //2
     printFullName(firstName = "Бислан", lastName = "Хуаде")
 
     //3
-    fun calculateFullName (firstName : String, lastName : String) : String{
+    fun calculateFullName(firstName: String, lastName: String): String {
         return firstName + " " + lastName
     }
 
     //4
-    fun calculateFullNameWithLength (firstName: String, lastName : String) : Pair <String, Int>{
+    fun calculateFullNameWithLength(firstName: String, lastName: String): Pair<String, Int> {
         val fullName = firstName + " " + lastName
-        return  Pair (fullName, fullName.length)
+        return Pair(fullName, fullName.length)
     }
 
     //5
-    fun findingPrimeNumber (number: Int){
-        for (number in 2..20 step 1){
-           if (number%1 ==0 && number%number == 0) println("$number - число простое")
-           else println("$number - число не простое")
+    fun findingPrimeNumber(number: Int) : Boolean {
+        val i: Int = 2
+        for (i in i..number step 1) {
+            if (number % i == 0) return false
         }
+        return true
     }
 
-    //6
+
     fun fibonacci(number: Int): Int {
         if (number <= 0) {
             return 0
